@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <GameStateProvider>
       <Suspense fallback={<div>Loading...</div>}>
-        <Game sendAdminMessage={sendAdminMessage} />;
+        <Game sendAdminMessage={sendAdminMessage} />
       </Suspense>
     </GameStateProvider>
   )
