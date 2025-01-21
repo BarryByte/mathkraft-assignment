@@ -48,7 +48,7 @@ export default function SecondScreen() {
   return (
     <div>
       {currentStep === 1 && (
-        <div className="bg-pink-100 flex flex-col items-center justify-center min-h-screen p-6">
+        <div className="bg-[#FFF6F6] flex flex-col items-center justify-center min-h-screen p-6">
           <div className=" bg-white flex items-center border-4 border-[#FF497C] p-4 w-fit">
             <div className="flex items-center border-r-4 border-[#FF497C] px-4 py-2 text-[#FF497C] font-bold text-4xl h-full">
               Quick Hack
@@ -88,7 +88,7 @@ export default function SecondScreen() {
       )}
 
       {currentStep === 2 && (
-        <div>
+        <div className="bg-[#FFF6F6] min-h-screen">
           <div
             className="text-[#FF497C] text-xl font-bold"
             onClick={previousStep}
@@ -103,8 +103,8 @@ export default function SecondScreen() {
                 <span>Way</span>
               </div>
 
-              <div className="flex-[2] bg-white flex justify-center items-center rounded border-4 border-[#FF497C] rounded-l-lg">
-                <div className="flex-2 flex items-center px-12 justify-between text-black text-4xl font-bold bg-white rounded-lg">
+              <div className="flex-[2] bg-white flex justify-center items-center border-4 border-[#FF497C] ">
+                <div className="flex-2 flex items-center px-12 justify-between text-black text-4xl font-bold bg-white ">
                   <MixedFractionComponent
                     whole={mixedFraction.whole}
                     numerator={mixedFraction.numerator}
@@ -117,11 +117,12 @@ export default function SecondScreen() {
                     <span>?</span>
                   </span>
                 </div>
-              </div>
-
-              <div className="flex-[1] text-6xl bg-white flex justify-center items-center rounded-lg border-l-8 border-[#FF497C] ">
+                <div className="flex-[1] h-28 text-6xl bg-white flex justify-center items-center  border-l-8 border-[#FF497C] ">
                 🤔
               </div>
+              </div>
+
+             
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import TestButton from "../components/testButton";
 import TestSelect from "../components/testSelect";
+import MixedFractionComponent from "../components/mixedFractionComponent";
 
 export default function FirstScreen() {
   const { gameStateRef, setGameStateRef } = useGameState();
@@ -18,6 +19,7 @@ export default function FirstScreen() {
   return (
     <div className="mx-auto">
       <Header mixedFraction={mixedFraction} />
+      
     </div>
   );
 }
