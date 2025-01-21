@@ -2,7 +2,6 @@ import { useGameState } from "../state-utils";
 import { MixedFraction } from "../game-state";
 import { useState } from "react";
 import MixedFractionComponent from "../components/mixedFractionComponent";
-import { Lock, LockIcon, LockKeyhole } from "lucide-react";
 import RedFraction from "../components/redFraction";
 
 interface HeaderProps {
@@ -46,178 +45,130 @@ export default function SecondScreen() {
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-[#FFF6F6] flex flex-col items-center p-6">
       {currentStep === 1 && (
-        <div className="bg-[#FFF6F6] flex flex-col items-center justify-center min-h-screen p-6">
-          <div className=" bg-white flex items-center border-4 border-[#FF497C] p-4 w-fit">
-            <div className="flex items-center border-r-4 border-[#FF497C] px-4 py-2 text-[#FF497C] font-bold text-4xl h-full">
+        <div className="flex flex-col items-center w-[40%]">
+          <div className="bg-white border-8 border-[#FF497C] w-full flex flex-col md:flex-row items-center text-6xl">
+            <div className="flex flex-[1] text-[#FF497C] border-r-8 md:border-b-0 border-[#FF497C] px-8 py-14 md:h-full">
               Quick Hack
             </div>
 
-            <div className="flex items-center text-black text-4xl font-bold ml-10">
-              <MixedFractionComponent
-                whole={mixedFraction.whole}
-                numerator={mixedFraction.numerator}
-                denominator={mixedFraction.denominator}
-              />
-              <span>=</span>
-              <span className="flex flex-col items-center mx-4">
+            <div className="flex flex-[2] flex-col md:flex-row items-center justify-center text-black mt-8 md:mt-0 md:ml-20">
+              <MixedFractionComponent {...mixedFraction} />
+              <span className="mx-4">=</span>
+              <div className="flex flex-col items-center mx-8 text-5xl">
                 <span>?</span>
-                <span className="border-t-4 border-black w-full"></span>
+                <span className="border-t-8 border-black w-full"></span>
                 <span>?</span>
-              </span>
+              </div>
             </div>
           </div>
 
-          <button className="mt-6  border-4 border-[#FF497C] px-24 py-3 text-[#FF497C] font-bold text-4xl bg-white shadow-lg hover:bg-pink-200 transition">
+          <div className="mt-12 border-8 border-[#FF497C] w-full px-16 py-6 text-[#FF497C] text-4xl md:text-6xl bg-white shadow-lg  justify-center items-center flex">
             A quicker way
-          </button>
+          </div>
 
-          <button className="relative mt-9">
-            <div className="absolute -left-1 -bottom-1 w-full h-full bg-black "></div>
-            <div className="relative border-4 border-[#FF497C] bg-white px-8 py-2 ">
-              <div
-                className="text-[#FF497C] text-xl font-bold"
-                onClick={nextStep}
-              >
-                Try &gt;&gt;
-              </div>
+          <button className="relative mt-12 text-3xl" onClick={nextStep}>
+            <div className="absolute -left-2 -bottom-2 w-full h-full bg-black"></div>
+            <div className="relative border-8 border-[#FF497C] bg-white px-12 py-4 text-[#FF497C] font-bold hover:bg-pink-200 transition">
+              Try &gt;&gt;
             </div>
           </button>
         </div>
       )}
 
       {currentStep === 2 && (
-        <div className="bg-[#FFF6F6] min-h-screen">
+        <div className="w-full max-w-3xl">
           <div
-            className="text-[#FF497C] text-xl font-bold"
+            className="text-[#FF497C] text-xl font-bold cursor-pointer mb-4"
             onClick={previousStep}
           >
             Back &lt;&lt;
           </div>
-          {/* first box : quick way */}
-          <div className="flex justify-center items-center h-40 bg-gray-100 ">
-            <div className="flex w-2/6 h-30  border-4 border-[#FF497C] rounded-lg">
-              <div className="flex-[1] bg-[#FF497C]  flex justify-center items-center flex-col text-4xl text-white">
-                <span>Quick</span>
-                <span>Way</span>
+
+          <div className="flex flex-col md:flex-row justify-center items-center bg-[#FF497C] p-1 rounded-lg border-4 border-[#FF497C] mb-6">
+            <div className="bg-[#FF497C] text-white text-4xl p-4 flex flex-col items-center rounded-md">
+              Quick Way
+            </div>
+
+            <div className="flex flex-col md:flex-row items-stretch justify-between text-black text-3xl font-bold mx-4 w-3/4 bg-white rounded-lg">
+              <div className=" flex w-2/3 justify-evenly rounded-lg">
+                <MixedFractionComponent {...mixedFraction} />
+
+                <div className="flex flex-col items-center justify-center  mx-4">
+                  <span className="text-7xl">=</span>
+                </div>
+                <div className="flex flex-col items-center justify-center mx-4 text-5xl">
+                  <span>?</span>
+                  <span className="border-t-4 border-black w-full"></span>
+                  <span>?</span>
+                </div>
               </div>
 
-              <div className="flex-[2] bg-white flex justify-center items-center border-4 border-[#FF497C] ">
-                <div className="flex-2 flex items-center px-12 justify-between text-black text-4xl font-bold bg-white ">
-                  <MixedFractionComponent
-                    whole={mixedFraction.whole}
-                    numerator={mixedFraction.numerator}
-                    denominator={mixedFraction.denominator}
-                  />
-                  <span>=</span>
-                  <span className="flex flex-col items-center mx-4">
-                    <span>?</span>
-                    <span className="border-t-4 border-black w-full"></span>
-                    <span>?</span>
-                  </span>
-                </div>
-                <div className="flex-[1] h-28 text-6xl bg-white flex justify-center items-center  border-l-8 border-[#FF497C] ">
+              <div className="flex items-center justify-center w-1/3 text-center  border-l-4 border-[#FF497C] rounded-xl text-6xl">
                 🤔
               </div>
-              </div>
-
-             
             </div>
           </div>
 
-          {/* second box : lock */}
-          <div className="flex h-32 w-5/12 justify-center items-center bg-[#FF497C] rounded-lg mx-auto p-3 gap-3 m-5">
-            {/* Left Icon Section */}
+          <div className="flex flex-col md:flex-row items-center bg-[#FF497C] p-4 rounded-lg mb-6">
             <div
-              className={`flex-[1] flex items-center justify-center rounded-lg p-2 ${
-                lock1State === "/lock_locked.svg" ? "bg-[#B40033]" : "bg-white"
+              className={`p-3 rounded-lg ${
+                lock1 ? "bg-[#B40033]" : "bg-white"
               }`}
+              onClick={handleLock1}
             >
               <img
-                onClick={handleLock1}
                 src={lock1State}
                 alt="lock"
-                className="h-12 w-12"
+                className="h-12 w-12 cursor-pointer"
               />
             </div>
-
-            {/* Text Section */}
-            <div className="flex-[3] text-3xl px-3 text-center">
-              Multiply denominator and wholes
+            <div className="flex-1 text-2xl text-center px-4">
+              Multiply denominator and whole number
             </div>
-
-            {/* Fraction Image Section */}
-            <div className="flex-[1] bg-white rounded-lg p-2">
-              <img
-                src="/fraction1.png"
-                alt="fraction1"
-                className="h-16 w-16 mx-auto"
-              />
+            <div className="bg-white p-3 rounded-lg">
+              <img src="/fraction1.png" alt="fraction" className="h-16 w-16" />
             </div>
-
-            {/* Button Section */}
-            <div className="flex-[1] bg-[#FF497C] text-white flex flex-col justify-center items-center p-2">
-              <div className="mb-2 text-4xl font-bold text-center truncate">
-                4 x 3
-              </div>
-              <div className="relative m-2 w-full max-w-[80%]">
-                <div className="absolute -left-1 -bottom-1 w-full h-full bg-black rounded-lg"></div>
-                <div className="relative bg-white px-4 py-2 rounded-lg">
-                  <div className="text-black text-2xl font-bold text-center">
-                    ?
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="text-white text-3xl p-4 ml-4"> {mixedFraction.denominator * mixedFraction.whole} </div>
           </div>
 
-          {/* third box : fraction */}
           {!lock1 && (
-            <div className="flex flex-col justify-center items-center ">
-              <div className="flex h-34 w-5/12 justify-center items-center bg-[#FF497C] rounded-lg mx-auto p-3 gap-3 m-5">
-                {/* lock Section */}
-                <div
-                  className={`flex-[1] flex items-center justify-center rounded-lg p-2 ${
-                    lock2State === "/lock_locked.svg"
-                      ? "bg-[#B40033]"
-                      : "bg-white"
-                  }`}
-                >
-                  <img
-                    onClick={handleLock2}
-                    src={lock2State}
-                    alt="lock"
-                    className="h-12 w-12"
-                  />
-                </div>
-
-                {/* Text Section */}
-                <div className="flex-[3] text-3xl px-2 py-5 text-center">
-                  Add the numberator, denominator remains same
-                </div>
-
-                {/* Fraction Image Section */}
-                <div className="flex-[1] bg-white rounded-lg p-2">
-                  <img
-                    src="/12-2-4.svg"
-                    alt="fraction-2"
-                    className="h-16 w-16 mx-auto"
-                  />
-                </div>
-
-                {/* ? Section */}
-                <div className="flex-[1] bg-[#FF497C] text-white flex flex-col justify-center items-center p-2">
-                  <div className="mb-1 text-3xl text-transparent">4 x 3</div>
-                </div>
+            <div className="flex flex-col md:flex-row items-center bg-[#FF497C] p-4 rounded-lg mb-6 ">
+              <div
+                className={`p-3 rounded-lg ${
+                  lock2 ? "bg-[#B40033]" : "bg-white"
+                }`}
+                onClick={handleLock2}
+              >
+                <img
+                  src={lock2State}
+                  alt="lock"
+                  className="h-12 w-12 cursor-pointer"
+                />
               </div>
-              {/* this should overlap on third box */}
-              {!lock2 ? (
-                <RedFraction numerator={12} denominator={4} text={false}/>
-              ) : (
-                <RedFraction numerator={"?"} denominator={"?"} text={true} />
-              )}
+              <div className="flex-1 text-2xl text-center px-4">
+                Add numerator, denominator remains same
+              </div>
+              <div className="bg-white p-3 rounded-lg">
+                <img src="/12-2-4.svg" alt="fraction" className="h-16 w-16" />
+              </div>
+              <div className="text-[#FF497C] text-3xl p-4">12.....</div>
             </div>
+          )}
+
+          {!lock1 && (
+            <>
+              {!lock2 ? (
+                <div className="w-full flex justify-start ml-4">
+                  <RedFraction numerator={12} denominator={4} text={false} />
+                </div>
+              ) : (
+                <div className="w-full flex justify-start ml-4">
+                  <RedFraction numerator={"?"} denominator={"?"} text={true} />
+                </div>
+              )}
+            </>
           )}
         </div>
       )}
