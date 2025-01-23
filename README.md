@@ -10,43 +10,37 @@ Design Mockup: [Figma Design](https://www.figma.com/design/MNBVvPXRRDYXtI8jk9ogz
 The game is designed to help students (primarily at the elementary and middle school levels) understand and practice the conversion of mixed fractions to improper fractions.
 
 ## Key Objectives
-1. **Educational Goal**: 
-   - Teach fraction concepts through interactive gameplay
-   - Provide visual representations of mixed fractions
+1. **Educational Goal**:
+   - Teach fraction concepts through interactive gameplay.
+   - Provide visual representations of mixed fractions.
 
 ## Setup
-This is a standard React Next.js project. You can install the necessary modules by running `npm install`, and then start the project with `npm run dev`.
+This is a standard React Next.js project. You can install the necessary modules by running:
+```bash
+npm install
+```
+Then, start the project with:
+```bash
+npm run dev
+```
 
-## Technical Requirements
-- A responsive React web-based game
-- Built on top of the starter template provided
-- Use the Figma design as a reference
-- You can select either:
-  - Screen 1
-  - Screen 2 and 3 
-- Use the variables in the `game/game-state.tsx` file as the game state
-- Use the `game/state-utils.tsx` file to manage the game state
-- Stick to the screen and step structure in the `game/game-state.tsx` file. The screen notation is well defined in the Figma design, and you can use steps as needed to navigate through the game
-- Use modular components for the game screens, with components located in the `game/components` folder
+## Screenshots
 
-## Submissions
-- Clone the repository.
-- Make the necessary changes to the code.
-- Submit a zip (or tar.gz) file containing the game, along with a short video recording of the gameplay.
-- Email the zip file to [sahasra@mathkraft.org](mailto:sahasra@mathkraft.org) with your contact details.
+### Screen-2
+![image](https://github.com/user-attachments/assets/c7578a6a-239f-4432-8355-960383b6f82b)
+![image](https://github.com/user-attachments/assets/01e8c728-d832-4f33-a817-2d5daea777a5)
+![image](https://github.com/user-attachments/assets/b32102af-4e8b-484d-971d-f685ed1676e1)
 
-## Guidelines
-- Don't spend more than 2 days on the assignment.
-- You are free to explore any libraries and frameworks.
-- Keep the game lightweight; don't overcomplicate the implementation.
-- We would prefer a good game with just one screen over an average game with all three screens.
-- You can use design references from this document: [Commonly used modules](https://drive.google.com/file/d/1cHely2VYA7HXrjVtYUagfB_XY-70G01k/view?usp=sharing)
-- Submissions will be judged on the following criteria:
-  - Code quality and modularity
-  - Game design and functionality
-  - User experience
- 
-## Deadline
-We will close taking in the submissions by Tuesday (21st Jan) EOD.
+### Screen-3
+![image](https://github.com/user-attachments/assets/41b481d2-a63c-465b-987e-e6f545d9e0d0)
 
-Please reach out to [sahasra@mathkraft.org](mailto:sahasra@mathkraft.org) for any help or concerns.
+## How to Contribute
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
